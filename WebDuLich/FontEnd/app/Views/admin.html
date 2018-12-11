@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Travel Voyage</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="shortcut icon"
+      href="../../asset/images/loc.png"
+      type="image/x-icon"
+    />
+
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+	 crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+	<div class="menu container">
+		<div class="menu_text text-center m-5">
+			<h2>Quản lí trang web du lịch</h2>
+		</div>
+		<ul class="nav nav-tabs" role="tablist">
+			<li class="nav-item"><a class="text nav-link active " data-toggle="tab" href="#home">Quản lý Tour</a></li>
+			<li class="nav-item"><a class="text nav-link " data-toggle="tab" href="#menu1">Quản lý Khách Sạn</a></li>
+			<li class="nav-item"><a class="text nav-link" data-toggle="tab" href="#menu2">Quản lý User</a></li>
+			<li class="nav-item"><a class="text nav-link " data-toggle="tab" href="#menu3">Quản lý Tin Tức</a></li>
+			<li class="ml-auto">
+				<a class="text-white text-danger" style="font-size:35px" href="index.html"><i class="fa fa-home"></i></a>
+			</li>
+		</ul>
+		<br />
+	</div>
+
+	<div class="tab-content">
+
+		<!-- Quản lý tour -->
+		<div role="tabpanel" class="tab-pane active container" id="home">
+			<div class="container row" >
+					<ul class="nav nav-tabs" role="tablist">
+							<li class="nav-item">
+								<a class="text nav-link active" data-toggle="tab" href="#home" id="home"><i class="fa fa-list"></i> Danh sách Tour</a>
+							</li>
+							<li class="nav-item">
+								<a class="text nav-link " data-toggle="modal" data-target="#myModalTour" href="#menu" id="themTour"><i class="fa fa-plus"></i>
+									Thêm Tour</a>
+							</li>
+						</ul>
+					
+					<div class="ml-auto" id="inputSearch">
+							<div class="input-group" style="width:400px">
+								<input type="text" class="form-control TimKiem" placeholder="Tìm kiếm tour theo địa điểm khởi hành" id="txtNhapTour">
+								<div class="input-group-append">
+									<button class="btn btn-success" type="button">
+										<i class="fa fa-search"></i>
+									</button>
+								</div>
+							</div>
+	
+					</div>
+			</div>
+			<br/>	
+			<div id="hienthi" >
+				<table class="table">
+					<thead>
+						<tr class="text-white">
+							<th>Mã tour</th>
+							<th>Tên tour</th>
+							<th>Giới thiệu</th>
+							<th>Ảnh tour</th>
+							<th>Ngày khởi hành</th>
+							<th>Điểm khởi hành</th>
+							<th>Giá tour</th>
+                            <th>Thao tác</th>
+						</tr>
+					</thead>
+					<tbody id="tbodyTour">
+
+					</tbody>
+				</table>
+				<div class="modal fade" id="myModalTour">
+					<div class="modal-dialog">
+						<div class="modal-content form_class">
+							<div class="modal-header">
+								<h4 class="modal-title"></h4>
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+							</div>
+							<div class="modal-body">
+								<div class="form-group">
+									<label>Mã tour: </label> <input id="MaTour" class="form-control" >
+								</div>
+								<div class="form-group">
+									<label>Tên tour: </label> <input id="TenTour" class="form-control" >
+								</div>
+								<div class="form-group">
+									<label>Giới thiệu: </label> <input id="GioiThieu" class="form-control" >
+                                </div>
+                                <div class="form-group">
+									<label>Ảnh tour: </label> <input id="AnhTour" class="form-control" >
+								</div>
+                                <div class="form-group">
+									<label>Ngày khởi hành: </label> <input id="NgayKhoiHanh" class="form-control" >
+                                </div>
+                                <div class="form-group">
+									<label>Điểm khởi hành: </label> <input id="DiemKhoiHanh" class="form-control" >
+								</div>
+								<div class="form-group">
+										<label>Giá tour: </label> <input id="GiaTour" class="form-control" >
+									</div>
+							</div>
+							<div class="modal-footer">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+        <!-- Quản lý khách sạn -->
+		<div role="tabpanel" class="tab-pane container" id="menu1">
+			<div class="clear-fix"></div>
+			<div class="container row" >
+				<ul class="nav nav-tabs" role="tablist">
+					<a class="text nav-link active" data-toggle="tab" href="#home" id="home"><i class="fa fa-list"></i> Danh sách khách sạn</a>
+					<a class="text nav-link " id="btnThemKhachSan" href="#menu" data-toggle="modal" data-target="#myModalKhachSan"><i class="fa fa-plus"></i>Thêm Khách sạn</a>
+				</ul>
+				<div class="ml-auto" id="inputSearch">
+                        <div class="input-group" style="width:400px">
+                            <input type="text" class="form-control TimKiem" placeholder="Tìm kiếm khách sạn theo tên" id="txtNhapTenKS">
+                            <div class="input-group-append">
+                                <button class="btn btn-success" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                </div>
+			</div>
+			<br/>
+			<div class="tblKS" id="tblKS">
+				<table class="table">
+					<thead>
+                    <th>Mã khách sạn</th>
+                    <th>Loại khách sạn</th>
+                    <th>Tên khách sạn</th>
+                    <th>Giới thiệu</th>
+                    <th>Ảnh khách sạn</th>
+                    <th>Thao tác</th>
+					</thead>
+					<tbody id="tbodyKhachSan">
+						
+					</tbody>
+				</table>
+
+			</div>
+			<br />
+			<div class="modal fade" id="myModalKhachSan">
+				<div class="modal-dialog">
+					<div class="modal-content form_class">
+					
+							<div class="modal-content">
+
+						<div class="modal-header">
+							<h4 class="modal-title"></h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+						
+						<div class="modal-body">
+							<div class="form-group">
+								<label>Mã khách sạn: </label> <input id="MaKhachSan" class="form-control" >
+							</div>
+
+							<div class="form-group">
+								<label>Loại khách sạn: </label> <input id="LoaiKhachSan" class="form-control" >
+							</div>
+							<div class="form-group">
+								<label>Tên khách sạn: </label> <input id="TenKhachSan" class="form-control" >
+
+							</div>
+							<div class="form-group">
+								<label>Giới thiệu: </label> <input id="GioiThieu" class="form-control" >
+
+							</div>
+
+							<div class="form-group">
+								<label>Ảnh khách sạn: </label> <input id="AnhKhachSan" class="form-control" >
+
+							</div>
+
+						</div>
+						
+						<div class="modal-footer">
+
+						</div>
+						</div>
+					</div>
+				</div>
+		</div>
+		</div>
+		<!-- Quản lý user -->
+		<div role="tabpanel" class="tab-pane container" id="menu2">
+				<div class="clear-fix"></div>
+				<div class="container row" >
+					<ul class="nav nav-tabs" role="tablist">
+						<a class="text nav-link active" data-toggle="tab" href="#home" id="home"><i class="fa fa-list"></i> Danh sách User</a>
+						<a class="text nav-link " id="btnThemUser" href="#menu" data-toggle="modal" data-target="#myModalUser"><i class="fa fa-plus"></i>Thêm User</a>
+					</ul>
+					<div class="ml-auto" id="inputSearch">
+							<div class="input-group" style="width:400px">
+								<input type="text" class="form-control TimKiem" placeholder="Tìm kiếm user theo tên" id="txtNhapTenUser">
+								<div class="input-group-append">
+									<button class="btn btn-success" type="button">
+										<i class="fa fa-search"></i>
+									</button>
+								</div>
+							</div>
+	
+					</div>
+				</div>
+				<br/>
+				<div class="tblUser" id="tblUser">
+					<table class="table">
+						<thead>
+								<th>Mã thành viên</th>
+								<th>Username</th>
+								<th>Password</th>
+								<th>Họ tên</th>
+								<th>Số DT</th>
+								<th>Địa chỉ</th>
+								<th>Phân Quyền</th>
+								<th>Thao tác</th>
+						</thead>
+						<tbody id="tbodyUser">
+							
+						</tbody>
+					</table>
+				</div>
+				<br />
+				<div class="modal fade" id="myModalUser">
+					<div class="modal-dialog">
+							<div class="modal-content form_class">
+									<div class="modal-header">
+										<h4 class="modal-title"></h4>
+										<button type="button" class="close" data-dismiss="modal">&times;</button>
+									</div>
+									<div class="modal-body">
+										<div class="form-group">
+											<label>Mã thành viên: </label> <input id="MaThanhVien" class="form-control" >
+										</div>
+			
+										<div class="form-group">
+											<label>Username: </label> <input id="Username" class="form-control" >
+										</div>
+										<div class="form-group">
+											<label>Password: </label> <input id="Password" class="form-control" >
+			
+										</div>
+										<div class="form-group">
+											<label>Họ tên: </label> <input id="HoTen" class="form-control" >
+			
+										</div>
+										<div class="form-group">
+											<label>Số điện thoại: </label> <input id="SDT" class="form-control" >
+			
+										</div>
+										<div class="form-group">
+											<label>Địa chỉ: </label> <input id="DiaChi" class="form-control" >
+			
+										</div>
+										<div class="form-group">
+											<label>Phân quyền: </label> <input id="PhanQuyen" class="form-control" >
+			
+										</div>
+									</div>
+									<div class="modal-footer">
+									</div>
+			
+							</div>
+					</div>
+				</div>
+		</div>
+		<!-- Quản lý tin tức -->
+		<div role="tabpanel" class="tab-pane container" id="menu3">
+				<div class="clear-fix"></div>
+				<div class="container row" >
+					<ul class="nav nav-tabs" role="tablist">
+						<a class="text nav-link active" data-toggle="tab" href="#home" id="home"><i class="fa fa-list"></i> Danh sách Tin tức</a>
+						<a class="text nav-link " id="btnThemTinTuc" href="#menu" data-toggle="modal" data-target="#myModalTinTuc"><i class="fa fa-plus"></i>Thêm Tin tức</a>
+					</ul>
+					<div class="ml-auto" id="inputSearch">
+							<div class="input-group" style="width:400px">
+								<input type="text" class="form-control TimKiem" placeholder="Tìm kiếm tin tức theo tên" id="txtNhapTenTinTuc">
+								<div class="input-group-append">
+									<button class="btn btn-success" type="button">
+										<i class="fa fa-search"></i>
+									</button>
+								</div>
+							</div>
+	
+					</div>
+				</div>
+				<br/>
+				<div class="tblTin" id="tblTin">
+					<table class="table">
+						<thead>
+						<th>Mã Tin tức</th>
+						<th>Ảnh Tin tức</th>
+						<th>Nội dung</th>
+						<th>Ngày đăng tin</th>
+						<th>Tiêu đề tin</th>
+						<th>Thao tác</th>
+						</thead>
+						<tbody id="tbodyTinTuc">
+							
+						</tbody>
+					</table>
+	
+				</div>
+				<br />
+				<div class="modal fade" id="myModalTinTuc">
+					<div class="modal-dialog">
+						<div class="modal-content form_class">
+							<div class="modal-content">
+							<div class="modal-header">
+								<h4 class="modal-title"></h4>
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+							</div>
+							<div class="modal-body">
+								<div class="form-group">
+									<label>Mã Tin tức: </label> <input id="MaTinTuc" class="form-control" >
+								</div>
+	
+								<div class="form-group">
+									<label>Ảnh Tin tức: </label> <input id="AnhTinTuc" class="form-control" >
+								</div>
+								<div class="form-group">
+									<label>Nội dung tin: </label> <input id="NoiDungTin" class="form-control" >
+	
+								</div>
+								<div class="form-group">
+									<label>Ngày đăng tin: </label> <input id="NgayDangTin" class="form-control" >
+	
+								</div>
+								<div class="form-group">
+									<label>Tiêu đề tin: </label> <input id="TieuDeTin" class="form-control" >
+	
+								</div>
+							</div>
+							<div class="modal-footer">
+							</div>
+							</div>
+						</div>
+					</div>
+			</div>
+		</div>
+
+	</div> 
+
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	 crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+	 crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+	 crossorigin="anonymous"></script>
+
+	 <script src="../../dist/vendor.js"></script>
+	 <script src="../../dist/Admin.js"></script>
+   
+	
+	 
+
+
+
+</body>
+
+</html>
